@@ -56,7 +56,7 @@ public class PrintList {
         }
     }
 
-    public void compareStudents(Gryffindor[] gryffindors, String name1, String name2) {
+    public void compareStudentsByHouse(Gryffindor[] gryffindors, String name1, String name2) {
         int sum1 = 0;
         int sum2 = 0;
 
@@ -73,6 +73,90 @@ public class PrintList {
             System.out.println(name2 + " лучший Гриффиндорец, чем " + name1);
         } else {
             System.out.println("Оба отличные Гриффиндорцы");
+        }
+    }
+
+    public void compareStudentsByHouse(Hufflepuff[] hufflepuffs, String name1, String name2) {
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (Hufflepuff hufflepuff : hufflepuffs) {
+            if (Objects.equals(name1, hufflepuff.getName())) {
+                sum1 = hufflepuff.getDiligence() + hufflepuff.getHonour() + hufflepuff.getLoyalty();
+            } else if (Objects.equals(name2, hufflepuff.getName())) {
+                sum2 = hufflepuff.getDiligence() + hufflepuff.getHonour() + hufflepuff.getLoyalty();
+            }
+        }
+        if (sum1 > sum2) {
+            System.out.println(name1 + " лучший Пуффендуец, чем " + name2);
+        } else if (sum1 < sum2) {
+            System.out.println(name2 + " лучший Пуффендуец, чем " + name1);
+        } else {
+            System.out.println("Оба отличные Пуффендуйцы");
+        }
+    }
+
+    public void compareStudentsByHouse(Ravenclaw[] ravenclaws, String name1, String name2) {
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (Ravenclaw ravenclaw : ravenclaws) {
+            if (Objects.equals(name1, ravenclaw.getName())) {
+                sum1 = ravenclaw.getCreativity() + ravenclaw.getWit()
+                        + ravenclaw.getWisdom() + ravenclaw.getIntelligence();
+            } else if (Objects.equals(name2, ravenclaw.getName())) {
+                sum2 = ravenclaw.getCreativity() + ravenclaw.getWit()
+                        + ravenclaw.getWisdom() + ravenclaw.getIntelligence();
+            }
+        }
+        if (sum1 > sum2) {
+            System.out.println(name1 + " лучший Когтевранец, чем " + name2);
+        } else if (sum1 < sum2) {
+            System.out.println(name2 + " лучший Когтевранец, чем " + name1);
+        } else {
+            System.out.println("Оба отличные Когтевранцы");
+        }
+    }
+
+    public void compareStudentsByHouse(Slytherin[] slytherins, String name1, String name2) {
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (Slytherin slytherin : slytherins) {
+            if (Objects.equals(name1, slytherin.getName())) {
+                sum1 = slytherin.getAmbition() + slytherin.getResourcefulness()
+                        + slytherin.getCunning() + slytherin.getLustForPower() + slytherin.getDetermination();
+            } else if (Objects.equals(name2, slytherin.getName())) {
+                sum2 = slytherin.getAmbition() + slytherin.getResourcefulness()
+                        + slytherin.getCunning() + slytherin.getLustForPower() + slytherin.getDetermination();
+            }
+        }
+        if (sum1 > sum2) {
+            System.out.println(name1 + " лучший Слизеринец, чем " + name2);
+        } else if (sum1 < sum2) {
+            System.out.println(name2 + " лучший Слизеринец, чем " + name1);
+        } else {
+            System.out.println("Оба отличные Слизеринцы");
+        }
+    }
+
+    public void compareStudents(Hogwarts[] students, String name1, String name2) {
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (Hogwarts student : students) {
+            if (Objects.equals(name1, student.getName())) {
+                sum1 = student.getMagicPower() + student.getTransgressionLength();
+            } else if (Objects.equals(name2, student.getName())) {
+                sum2 = student.getMagicPower() + student.getTransgressionLength();
+            }
+        }
+        if (sum1 > sum2) {
+            System.out.println(name1 + " обладает бОльшей мощностью магии, чем " + name2);
+        } else if (sum1 < sum2) {
+            System.out.println(name2 + " обладает бОльшей мощностью магии, чем " + name1);
+        } else {
+            System.out.println("Силы студентов равны");
         }
     }
 

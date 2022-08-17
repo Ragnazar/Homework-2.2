@@ -1,12 +1,3 @@
-import javax.print.DocFlavor;
-import javax.print.DocPrintJob;
-import javax.print.PrintService;
-import javax.print.ServiceUIFactory;
-import javax.print.attribute.Attribute;
-import javax.print.attribute.AttributeSet;
-import javax.print.attribute.PrintServiceAttribute;
-import javax.print.attribute.PrintServiceAttributeSet;
-import javax.print.event.PrintServiceAttributeListener;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +18,7 @@ public class Main {
         Gryffindor[] gryffindors = {
                 new Gryffindor("Гарри Поттер", 65, 50,
                         8, 10, 15),
-                new Gryffindor("Гермона Грейнджер", 55, 40,
+                new Gryffindor("Гермиона Грейнджер", 55, 40,
                         5, 5, 6),
                 new Gryffindor("Рон Уизли", 40, 20,
                         3, 6, 5)
@@ -63,8 +54,12 @@ public class Main {
         printService.print(ravenclaws);
         System.out.println();
 
-        printService.compareStudents(gryffindors,"Гермона Грейнджер", "Гарри Поттер" );
+        printService.compareStudentsByHouse(gryffindors, "Гермона Грейнджер", "Гарри Поттер");
+        printService.compareStudentsByHouse(slytherins, "Драко Малфой", "Грегори Гойл");
+        printService.compareStudentsByHouse(hufflepuffs, "Седрик Диггори", "Захария Смит");
+        printService.compareStudentsByHouse(ravenclaws, "Джоу Чанг", "Маркус Белби");
+        System.out.println();
+        printService.compareStudents(students, "Гарри Поттер", "Драко Малфой");
 
-
-}
+    }
 }
